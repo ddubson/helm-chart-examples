@@ -24,3 +24,23 @@ kubectl describe configmaps mychart-configmap
 # To remove the chart
 helm uninstall helm-demo-config-map
 ```
+
+## Templating
+
+### Built-in Objects
+
+You can use built-in objects when using templating
+in descriptor yaml files. Built-in objects are 
+variables that are part of Helm that are accessible
+to the yaml file without the need to create it.
+
+e.g. `{{ .Release.Name }}` is a built-in object with variable Name
+
+https://helm.sh/docs/chart_template_guide/builtin_objects/
+
+```bash
+helm install releasedemo ./mychart
+
+# See the manifest for the release - should contain the resolved built-in
+helm get manifest releasedemo
+```
