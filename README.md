@@ -75,3 +75,8 @@ helm install releasedemo ./mychart
 # See the manifest for the release - should contain the resolved built-in
 helm get manifest releasedemo
 ```
+
+### Applying built-in functions
+
+- [Go template](https://golang.org/pkg/text/template/)
+- [Sprig library](https://masterminds.github.io/sprig/)

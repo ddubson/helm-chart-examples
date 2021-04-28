@@ -1,1 +1,5 @@
 state: "NY"
+city: "Queens"
+infra:
+  zone: a,b,c
+  region: us-east
