@@ -12,6 +12,9 @@ data:
   zone: {{ quote .Values.infra.zone }}
   region: {{ quote .Values.infra.region }}
   city: {{ upper .Values.city }}
+  pipeline: {{ .Values.city | upper | quote }}
+  now: {{ now | date "2006-01-02" | quote }}
+  contact: {{ .Values.contact | default "1800-DEFAULT" | quote }}
   {{ if eq .Values.infra.region "us-east" }}available: true {{ end }}
   {{ if eq .Values.infra.region "us-west" }}western-zone: true {{ end }}
   {{- $relname := .Release.Name -}}
