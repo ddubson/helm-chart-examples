@@ -27,6 +27,26 @@ helm uninstall helm-demo-config-map
 
 ## Templating
 
+## Reading values dynamically
+
+To read in values into your k8s definition template, 
+
+- define the key-value pair in the `values.yml` file
+- use the key-value pair in your k8s definition file
+
+To test out the chart before going live, you can run it with dry-run
+flag:
+
+```shell
+helm install --debug --dry-run firstrun ./mychart
+
+# Now release!
+helm install releasedemo ./mychart
+
+# See the manifest for the release - should contain the resolved values
+helm get manifest releasedemo
+```
+
 ### Built-in Objects
 
 You can use built-in objects when using templating
