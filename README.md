@@ -47,6 +47,17 @@ helm install releasedemo ./mychart
 helm get manifest releasedemo
 ```
 
+## Runtime values resolution
+
+There may be times when you have defined some values in your `values.yml`
+file, but at runtime, you may want to override the defaults that you have set.
+
+To do so, you can do this at install time:
+
+```shell
+helm install --dry-run --debug --set state=CA releasedemo ./mychart
+```
+
 ### Built-in Objects
 
 You can use built-in objects when using templating
