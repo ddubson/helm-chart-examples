@@ -3,3 +3,8 @@ city: "Queens"
 infra:
   zone: a,b,c
   region: us-east
+tags:
+  machine: "some-machine"
+  rack: 4
+  drive: HDD
+  size: 8G
