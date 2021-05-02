@@ -20,3 +20,7 @@ data:
   Storage Type: {{ .drive | upper | quote }}
   Size: {{ .size | quote }}
   {{- end }}
+  lang-support: |-
+  {{- range .Values.languages }}
+    - {{ . | title | quote }}
+  {{- end }}

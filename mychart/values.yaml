@@ -8,3 +8,8 @@ tags:
   rack: 4
   drive: HDD
   size: 8G
+languages:
+  - en-us
+  - en-uk
+  - fr
+  - sp
