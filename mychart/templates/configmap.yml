@@ -8,3 +8,5 @@ data:
   zone: {{ quote .Values.infra.zone }}
   region: {{ quote .Values.infra.region }}
   city: {{ upper .Values.city }}
+  {{ if eq .Values.infra.region "us-east" }}available: true {{ end }}
+  {{ if eq .Values.infra.region "us-west" }}western-zone: true {{ end }}
