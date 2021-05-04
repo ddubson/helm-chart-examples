@@ -14,13 +14,15 @@ data:
   city: {{ upper .Values.city }}
   {{ if eq .Values.infra.region "us-east" }}available: true {{ end }}
   {{ if eq .Values.infra.region "us-west" }}western-zone: true {{ end }}
+  {{- $relname := .Release.Name -}}
   {{- with .Values.tags }}
   Machine Type: {{ .machine | default "NA" | quote }}
   Rack ID: {{ .rack | quote }}
   Storage Type: {{ .drive | upper | quote }}
   Size: {{ .size | quote }}
+  Release: {{ $relname }}
   {{- end }}
   lang-support: |-
-  {{- range .Values.languages }}
-    - {{ . | title | quote }}
+  {{- range $index, $lang := .Values.languages }}
+    - {{ $index }} : {{ $lang | title | quote }}
   {{- end }}
