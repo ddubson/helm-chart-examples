@@ -2,7 +2,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-configmap
-{{- template "mychart.systemlabels" $ }}  # The $ signifies current scope is passed down
+  {{- template "mychart.systemlabels" $ }}  # The $ signifies current scope is passed down
+  {{ include "mychart.version" $ | indent 4 }} # Prefer using include, allows for greater control over indentation
 data:
   myvalue: "Sample Config Map"
   state: {{ .Values.state }}
