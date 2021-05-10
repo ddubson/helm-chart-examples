@@ -1,11 +1,16 @@
+{{- define "mychart.systemlabels" }}
+  labels:
+    drive: ssd
+    machine: frontdrive
+    rack: 4c
+    vcard: 8g
+{{- end }}
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-configmap
-  labels:
-  {{- with .Values.tags }}
-    first: {{ .machine }}
-  {{- end }}
+{{- template "mychart.systemlabels" }}
 data:
   myvalue: "Sample Config Map"
   state: {{ .Values.state }}
