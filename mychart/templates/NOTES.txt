@@ -1,0 +1,5 @@
+This content gets displayed at the end of
+Helm chart install!
+
+You'd usually provide instructions on how 
+to use the Chart here for your users.
