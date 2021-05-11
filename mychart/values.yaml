@@ -13,3 +13,5 @@ languages:
   - en-uk
   - fr
   - sp
+mysubchart:
+  dbhostname: prod-mysqlnode
